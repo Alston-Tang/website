@@ -11,6 +11,6 @@ def linkedin_callback():
 
 @oauth.route("/linkedin")
 def linkedin_auth():
-    request_args = {"response_type": "code", "client_id": "78cxwrmxeppmqa", "redirect_uri": "https://thm64.com/oauth/linkedin", "state": "hjVWOcyfAK1R2wKGt0ct"}
+    request_args = {"response_type": "code", "client_id": "78cxwrmxeppmqa", "redirect_uri": "https://thm64.com/oauth/callback/linkedin", "state": "hjVWOcyfAK1R2wKGt0ct"}
     return redirect("https://www.linkedin.com/oauth/v2/authorization?" + urlencode(request_args))
 
