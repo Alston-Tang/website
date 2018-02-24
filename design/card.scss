@@ -1,20 +1,71 @@
 @import "colors";
 @import "transition";
+@import "asset";
 
 $card-radius: 4px;
 
-@mixin set-desc-link-style() {
-  cursor: pointer;
-  color: $card-desc-tag-default;
-  text-decoration: none;
-  @include set-transition();
-  &:hover {
-    color: $card-desc-tag-focus;
-    text-decoration: underline;
+.card {
+  margin-bottom: 20px;
+  //noinspection ALL
+  img.card-cover {
+    border-top-left-radius: $card-radius;
+    border-top-right-radius: $card-radius;
+    width: 100%;
+  }
+  //noinspection ALL
+  .card-concrete {
+    border: 1px solid;
+    border-color: $card-border-color;
+    border-radius: $card-radius;
+  }
+}
+
+section.right-card {
+  $card-background: rgb(246, 247, 249);
+  $card-title: rgb(102, 102, 102);
+  $card-important: rgb(119, 119, 119);
+  $card-annotation: rgb(153, 153, 153);
+
+  .card-concrete {
+    background-color: $card-background;
+    .card-info {
+      padding: 26px 30px 30px;
+      .card-title {
+        margin: 0 0 22px 0;
+        color: $card-title;
+        font-size: 16px;
+        font-weight: 700;
+      }
+      .card-link {
+        margin: 5px 0 0 0;
+        @include set-desc-link-style();
+        font-size: 12px;
+        font-weight: 600;
+      }
+
+      .card-important {
+        margin: 10px 0 4px 0;
+        color: $card-important;
+        font-size: 15px;
+        font-weight: 600;
+      }
+
+      .card-annotation {
+        color: $card-annotation;
+        font-size: 13px;
+        margin: 8px 0 0 0;
+        font-weight: 300;
+      }
+    }
   }
 }
 
 section.separate-cover-card {
+  $card-header: rgb(153, 153, 153);
+  $card-title-default: $theme-blue;
+  $card-title-focus: black;
+  $card-desc-default: #666666;
+  $card-digest: #777777;
 
   header {
     font-size: 13px;
@@ -25,8 +76,6 @@ section.separate-cover-card {
 
   .card-concrete {
     background-color: white;
-    border-color: $card-border-color;
-    border-radius: $card-radius;
 
     img.card-cover {
       border-top-left-radius: $card-radius;

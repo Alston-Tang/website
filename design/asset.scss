@@ -1,0 +1,16 @@
+@import "colors";
+@import "transition";
+
+$card-link-default: $theme-blue;
+$card-link-hover: black;
+
+@mixin set-desc-link-style() {
+  cursor: pointer;
+  color: $card-link-default;
+  text-decoration: none;
+  @include set-transition();
+  &:hover {
+    color: $card-link-hover;
+    text-decoration: underline;
+  }
+}
