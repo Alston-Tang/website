@@ -1,9 +1,12 @@
 @import "default-responsive";
+@import "card";
 @import "colors";
+@import "transition";
 
 body {
   font-family: 'Open Sans', sans-serif;
   background-color: $main-background;
+  margin-top: 30px;
 }
 
 .flex-container {
@@ -52,7 +55,7 @@ main {
           background-color: $social-wrapper-default;
           border-radius: 50%;
           text-align: center;
-          transition: all 0.2s;
+          @include set-transition();
           margin: 0 10px;
           cursor: pointer;
 
@@ -90,7 +93,7 @@ main {
       padding-top: 11px;
       padding-bottom: 13px;
       font-size: 14px;
-      transition: all 0.2s;
+      @include set-transition();
       cursor: pointer;
 
       &:hover {

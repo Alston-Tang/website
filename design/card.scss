@@ -1,0 +1,84 @@
+@import "colors";
+@import "transition";
+
+$card-radius: 4px;
+
+@mixin set-desc-link-style() {
+  cursor: pointer;
+  color: $card-desc-tag-default;
+  text-decoration: none;
+  @include set-transition();
+  &:hover {
+    color: $card-desc-tag-focus;
+    text-decoration: underline;
+  }
+}
+
+section.separate-cover-card {
+
+  header {
+    font-size: 13px;
+    color: $card-header;
+    text-align: center;
+    margin-bottom: 19px;
+  }
+
+  .card-concrete {
+    background-color: white;
+    border-color: $card-border-color;
+    border-radius: $card-radius;
+
+    img.card-cover {
+      border-top-left-radius: $card-radius;
+      border-top-right-radius: $card-radius;
+      width: 100%;
+    }
+    .card-info {
+      padding: 21px 39px 19px;
+
+      .card-title {
+        font-size: 24px;
+        cursor: pointer;
+        margin: 0;
+        color: $card-title-default;
+        @include set-transition();
+
+        &:hover {
+          color: $card-title-focus;
+        }
+      }
+
+      .card-desc {
+        font-size: 13px;
+        font-weight: 400;
+        color: $card-desc-default;
+        > span.desc-tags {
+          > a.desc-tag {
+            @include set-desc-link-style();
+          }
+        }
+        > span.desc-separator {
+          display: inline-block;
+          width: 1px;
+          height: 12px;
+          padding-left: 8px;
+          margin-left: 8px;
+          border-left: solid 1px;
+          margin-bottom: -2px;
+        }
+
+        > span.desc-comment {
+          @include set-desc-link-style();
+        }
+      }
+
+      .card-digest {
+        font-size: 14px;
+        color: $card-digest;
+        .digest-continue-reading {
+          @include set-desc-link-style();
+        }
+      }
+    }
+  }
+}
