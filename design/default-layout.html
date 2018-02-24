@@ -11,12 +11,18 @@
 <body>
 <main class="flex-container">
     <div class="flex-item main-col flex-container col-container" id="main-header">
-        <section id="section-profile">
-            <figure>
-                <img src="figure.jpg">
-            </figure>
-            <h1 id="profile-name">Haomo Tang</h1>
-            <h2 id="profile-position">Software Engineer</h2>
+        <section class="flex-container" id="section-profile">
+            <div class="portrait-morphism-container">
+                <figure>
+                    <img src="figure.jpg">
+                </figure>
+                <h1 id="profile-name">Haomo Tang</h1>
+                <h2 id="profile-position">Software Engineer</h2>
+                <div id="profile-social" class="flex-container">
+                    <div class="social-icon-wrapper icon-start"><i class="fa fa-github-alt" aria-hidden="true"></i></div>
+                    <div class="social-icon-wrapper icon-end"><i class="fa fa-linkedin" aria-hidden="true"></i></div>
+                </div>
+            </div>
         </section>
         <section id="section-nav">
             <ul>
@@ -26,10 +32,6 @@
                 <li><a>Blog</a></li>
                 <li><a>Contact me</a></li>
             </ul>
-        </section>
-        <section id="section-social" class="flex-container">
-            <a class="social-icon-wrapper icon-start"><i class="fa fa-github-alt" aria-hidden="true"></i></a>
-            <a class="social-icon-wrapper icon-end"><i class="fa fa-linkedin" aria-hidden="true"></i></a>
         </section>
         <footer></footer>
     </div>

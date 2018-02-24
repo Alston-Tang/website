@@ -1,0 +1,74 @@
+@mixin portrait-center-morphism($element-id, $width) {
+  #{$element-id} {
+    justify-content: center;
+    div.portrait-morphism-container {
+      width: $width;
+    }
+  }
+}
+
+$large-viewport-l: 180px;
+$large-viewport-c: 580px;
+$large-viewport-r: 386px;
+@media screen and (min-width: 1250px) {
+  main {
+
+    > #main-header {
+      width: $large-viewport-l;
+    }
+
+    > #main-content {
+      width: $large-viewport-c;
+    }
+
+    > #main-right {
+      width: $large-viewport-r;
+    }
+  }
+}
+
+$middle-viewport-l: 180px;
+$middle-viewport-c: 480px;
+$middle-viewport-r: 300px;
+@media screen and (max-width: 1250px) and (min-width: 1050px) {
+  main {
+
+    > #main-header {
+      width: $middle-viewport-l;
+    }
+
+    > #main-content {
+      width: $middle-viewport-c;
+    }
+
+    > #main-right {
+      width: $middle-viewport-r;
+    }
+  }
+}
+
+$portrait-viewport: 180px;
+@media screen and (max-width: 1050px) {
+  main {
+    flex-wrap: wrap;
+
+    > #main-header {
+      width: 100%;
+      @include portrait-center-morphism(#section-profile, $portrait-viewport);
+      #section-profile {
+        h1, h2 {
+          text-align: center
+        }
+      }
+    }
+
+    > #main-content {
+      width: 100%;
+    }
+
+    > #main-right {
+      width: 100%;
+    }
+  }
+}
+
